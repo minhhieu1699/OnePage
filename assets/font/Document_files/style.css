@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin:  0;
+    box-sizing: border-box;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* 1. Vị Trí
+    2.Kích thước(rộng , cào)
+    3. Màu sắc
+    4. Kiểu dáng
+*/
+#main{
+
+}
+/* ----------------------------------- */
+/* dính 2 bên của thanh nav vào sát trái phải */
+#header{
+    height: 46px;
+    background-color: black;
+    position: fixed;
+    top : 0;
+    right: 0;
+    left: 0;
+}
+#nav{
+    display: inline-block;
+}
+/* xoá chấm đầu dòng khi dùng ul li */
+#nav, .subnav{
+    list-style-type: none;
+}
+#nav > li{
+    /* hiển thị theo hàng dọc */
+    display: inline-block;
+    position: relative;
+}
+#nav li:hover .subnav{
+    display: block;
+}
+/* css thẳng vào con của nav , tránh trùng tên nhiều subnav */
+#nav .subnav{
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    background-color: #fff;
+    /* Dọc = 0 ngang = 0 / độ rộng của bóng = 10px / màu bóng */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#nav .subnav a{
+    color:black;
+    padding: 0 12px;
+    line-height: 38px;
+}
+/* dùng chung 1 css */
+/*  đặt hover vào thẻ li để k mất button khi hover */
+#nav > li:hover > a,
+/* trỏ đến ô nào ô đó trong menu cấp 2 chuyển màu */
+#nav .subnav li:hover{
+    color: #000;
+    background-color: #ccc;
+}
+/* thay đổi thẻ a theo thuộc tính */
+#nav > li > a {
+    color: white;
+    text-transform: uppercase;  
+}
+
+#nav li a {
+    /* Xoá gạch chân của thẻ "a" */
+    text-decoration: none;
+    /* đường bôi đậm chữ */
+    line-height: 46px;
+    padding: 0 24px 0 24px;
+    display: block;
+}
+#nav .nav-arrow-down{
+    font-size: 14px;
+}
+/* kế thừa hết thanh nav */
+#header .search-btn{
+    float: right;
+}
+#header .search-btn:hover{
+    background-color:#f44336!important;
+    cursor: pointer;
+}
+#header .search-icon{
+    color : white;
+    font-size:  20px;
+    line-height: 46px;
+    padding: 0 21px;
+}
+/* ---------------------------------- */
+#slider{
+    /* tránh bị thanh nav đè nổi lên */
+    margin-top: 46px;
+    /* 50% theo chiều ngang của chính nó */
+    padding-top: 50%;
+    position: relative;
+    background: url('/assets/img/img_chicago.jpg') top center /cover no-repeat ;
+
+}
+
+#content{
+    min-height: 1000px;
+    background-color: #333;
+}
+
+#footer{
+
+}

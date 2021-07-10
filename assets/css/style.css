@@ -1,0 +1,369 @@
+* {
+    padding: 0;
+    margin:  0;
+    box-sizing: border-box;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+.text-white{
+    color: white !important;
+}
+/* 1. Vị Trí
+    2.Kích thước(rộng , cào)
+    3. Màu sắc
+    4. Kiểu dáng
+*/
+#main{
+
+}
+/* ----------------------------------- */
+/* dính 2 bên của thanh nav vào sát trái phải */
+#header{
+    height: 46px;
+    background-color: black;
+    position: fixed;
+    top : 0;
+    right: 0;
+    left: 0;
+    /* ưu tiện theo giá trị */
+    z-index: 1;
+}
+#nav{
+    display: inline-block;
+}
+/* xoá chấm đầu dòng khi dùng ul li */
+#nav, .subnav{
+    list-style-type: none;
+}
+#nav > li{
+    /* hiển thị theo hàng dọc */
+    display: inline-block;
+    position: relative;
+}
+#nav li:hover .subnav{
+    display: block;
+}
+/* css thẳng vào con của nav , tránh trùng tên nhiều subnav */
+#nav .subnav{
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    background-color: #fff;
+    /* Dọc = 0 ngang = 0 / độ rộng của bóng = 10px / màu bóng */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#nav .subnav a{
+    color:black;
+    padding: 0 12px;
+    line-height: 38px;
+}
+/* dùng chung 1 css */
+/*  đặt hover vào thẻ li để k mất button khi hover */
+#nav > li:hover > a,
+/* trỏ đến ô nào ô đó trong menu cấp 2 chuyển màu */
+#nav .subnav li:hover{
+    color: #000;
+    background-color: #ccc;
+}
+/* thay đổi thẻ a theo thuộc tính */
+#nav > li > a {
+    color: white;
+    text-transform: uppercase;  
+}
+
+#nav li a {
+    /* Xoá gạch chân của thẻ "a" */
+    text-decoration: none;
+    /* đường bôi đậm chữ */
+    line-height: 46px;
+    padding: 0 24px 0 24px;
+    display: block;
+}
+#nav .nav-arrow-down{
+    font-size: 14px;
+}
+/* kế thừa hết thanh nav */
+#header .search-btn{
+    float: right;
+}
+#header .search-btn:hover{
+    background-color:#f44336!important;
+    cursor: pointer;
+}
+#header .search-icon{
+    color : white;
+    font-size:  20px;
+    line-height: 46px;
+    padding: 0 21px;
+}
+/* ---------------------------------- */
+#slider{
+    /* tránh bị thanh nav đè nổi lên */
+    margin-top: 46px;
+    /* 50% theo chiều ngang của chính nó */
+    padding-top: 50%;
+    position: relative;
+    background: url('/assets/img/img_chicago.jpg') top center /cover no-repeat ;
+
+}
+#slider .text-content {
+    position: absolute;
+    bottom: 47px;
+    color: #fff;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    width: 100%;
+    text-align: center;
+}
+
+#slider .text-heading{
+    /* xác định đọ mỏng dày của chữ */
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#slider .text-description{
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+#content .content-section{
+    padding-top: 64px!important;
+    padding-bottom: 64px!important;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#content .section-heading{
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-align: center;
+    
+}
+#content .section-sub-heading{
+    margin-top: 25px;
+    /* chữ ngiêng */
+    font-style: italic;
+    /* làm mờ chữ */
+    opacity: 0.6;
+    font-size: 15px;
+    text-align: center;
+}
+#content .section-about{
+    margin-top: 25px;
+    /* khoảng cách của cách dòng chữ */
+    line-height: 1.4;
+    text-align: justify;
+}
+
+#content .members-list{
+    margin-top: 48px;
+    text-align: center;
+    /* xoá bỏ float ko bị nhảy khối */
+    overflow: hidden;
+    
+}
+
+#content .member-item{
+    width: 33.3333%;
+    /* chuyển thành 1 hàng khối của ảnh */
+    float:left;
+}
+#content .member-name{
+    font-size: 15px;
+    font-style: oblique;
+}
+
+#content .member-img{
+    width: 154px;
+    margin-top: 15px;
+    /* bo cong viền */
+    border-radius: 4px;
+}
+.tour-section{
+    background-color: black;
+}
+/* ticket */
+.tickets-list{
+    background-color: white;
+    font-size: 15px;
+    margin-top: 40px;
+}
+.tickets-list li{
+    color: #757575;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+}
+.tickets-list .sold-out{
+    padding: 3px 4px;
+    margin-left: 16px;
+    background-color: #f44336;
+    color: white;
+}
+.tickets-list .soLuongConLai{
+    float: right;
+    background-color: black;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    /* căn giữa cả ô */
+    margin-top: -3px;
+}
+
+/* end ticket */
+/* Tour */
+.place-list{
+    margin-top: 32px;
+    overflow: hidden;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-bottom: 40px;
+}
+
+.place-items{
+    float: left;
+    width: 33.33333%;
+    padding: 0 8px;
+}
+
+.place-img{
+    width: 100%;
+    display: block;
+}
+
+.place-img:hover{
+    opacity: 0.6;
+}
+.place-content{
+    background-color: white;
+    padding: 16px;
+    font-size: 15px;  
+}
+
+.place-heading{
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.place-time{
+    opacity: 0.6;
+    margin-top: 15px;
+}
+
+.place-description{
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.place-btn{
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 10px 10px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.place-btn:hover{
+    color: #000;
+    background-color:#ccc;
+    
+}
+/* end tour */
+
+/* Contact */
+.contact{
+    margin-top: 48px;
+}
+
+.contact-info{
+    font-size: 18px;
+    float: left;
+    line-height: 1.5;
+}
+
+.contact-info i{
+    width: 30px;
+    display: inline-block;
+
+}
+
+.contact-feedback{
+    float: right;
+    font-size: 15px;
+}
+
+.input-Name{
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.input-Message{
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.submit{
+    float: right;
+    margin-top: 16px;
+    padding: 10px 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+.submit:hover{
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+/* End Contact */
+
+/* Map */
+.Map-section img{
+    margin-top: 64px;
+    width: 100%;
+}
+
+/* footer */
+
+#footer .social-list{
+    font-size: 16px;
+}
+
+#footer .social-list a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#footer .social-list a:hover{
+    opacity: 0.6;
+}
+
+#footer .copyright{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 12px;;
+}
+
+#footer .copyright a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#footer .copyright a:hover{
+    opacity: 0.6;
+}
+
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+}   
